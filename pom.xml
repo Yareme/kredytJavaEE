@@ -18,6 +18,14 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>10.0.0</version>
+        </dependency>
+
+
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
@@ -47,6 +55,9 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+
+
     </dependencies>
 
     <build>
@@ -58,4 +69,6 @@
             </plugin>
         </plugins>
     </build>
+
+
 </project>

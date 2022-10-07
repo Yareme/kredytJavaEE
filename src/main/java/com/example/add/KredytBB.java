@@ -53,7 +53,7 @@ public class KredytBB {
 
 	public String calc() {
 		doTheMath();
-			return null;
+		return null;
 	}
 
 
@@ -66,7 +66,7 @@ public class KredytBB {
 
 
 			result = (kwota + kwota / 100 * procent) / (termin * 12);
-			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Operacja wykonana poprawnie", null));
+			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Rata: "+result, null));
 			return true;
 
 		}catch (Exception e){
