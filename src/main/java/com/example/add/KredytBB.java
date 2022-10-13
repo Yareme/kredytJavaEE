@@ -9,35 +9,35 @@ import javax.faces.context.FacesContext;
 @Named
 @RequestScoped
 public class KredytBB {
-	private String kwota;
-	private String procent;
-	private String termin;
+	private Double kwota;
+	private Double procent;
+	private Integer termin;
 	private Double result;
 
 	@Inject
 	FacesContext ctx;
 
-	public String getKwota() {
+	public Double getKwota() {
 		return kwota;
 	}
 
-	public void setKwota(String kwota) {
+	public void setKwota(Double kwota) {
 		this.kwota = kwota;
 	}
 
-	public String getProcent() {
+	public Double getProcent() {
 		return procent;
 	}
 
-	public void setProcent(String procent) {
+	public void setProcent(Double procent) {
 		this.procent = procent;
 	}
 
-	public String getTermin() {
+	public Integer getTermin() {
 		return termin;
 	}
 
-	public void setTermin(String termin) {
+	public void setTermin(Integer termin) {
 		this.termin = termin;
 	}
 
@@ -49,8 +49,6 @@ public class KredytBB {
 		this.result = result;
 	}
 
-
-
 	public String calc() {
 		doTheMath();
 		return null;
@@ -60,10 +58,6 @@ public class KredytBB {
 
 	public boolean doTheMath() {
 		try{
-			double kwota = Double.parseDouble(this.kwota);
-			double procent = Double.parseDouble(this.procent);
-			double termin = Double.parseDouble(this.termin);
-
 
 			result = (kwota + kwota / 100 * procent) / (termin * 12);
 			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Rata: "+result, null));
